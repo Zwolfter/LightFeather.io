@@ -1,0 +1,82 @@
+<HTML>
+    <HEAD>
+        <TITLE>Registration</TITLE>
+        <STYLE>
+            input[type="text"], input[type="email"], input[type="password"]{
+                border-radius: 5px;
+                border: 1px solid #000000;
+                margin-bottom: 8px;
+                width: 100%; 
+            }
+            input[type="submit"] {
+                border-radius: 5px;
+                border: 1px solid #000000;
+                margin-bottom: 8px;
+                width: 20%; 
+            }
+            .center {
+                margin: auto;
+                width: 30%;
+            }
+        </STYLE>
+        <script>
+            function validateUsername(user){
+                if(user.value == ""){
+                    user.setCustomValidity("Please enter a Username!")
+                    user.reportValidity()
+                    return(false)
+                }
+                user.setCustomValidity("")
+                return(true)
+            }
+            function validateEmail(mail) 
+            {
+                if (/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(mail.value))
+                {
+                    mail.setCustomValidity("")
+                    return(true)
+                }
+                mail.setCustomValidity("You have entered an invalid email address!")
+                mail.reportValidity()
+                return (false)
+            }
+            function validatePassword(password){
+                var pass = document.getElementById("Password")
+                var confirmPass = document.getElementById("ConfirmPassword")
+                var compare = pass.value.localeCompare(confirmPass.value)
+                if(!compare){
+                    confirmPass.setCustomValidity("")
+                    return(true)
+                }
+                confirmPass.setCustomValidity("Passwords must match!")
+                confirmPass.reportValidity()
+                return(false)
+            }
+        </script>
+    </HEAD>
+    <BODY>
+        <form name="Registration" action="Registration.html" method="POST">
+            <div class="center">
+                <div>
+                    <label for="Username">Username:</label><br />
+                    <input name="Username" type ="text" maxlength="15" required onBlur="validateUsername(this);" />
+                </div>
+                <div>
+                    <label for="Email">Email:</label><br />
+                    <input name="Email" type="email" required onBlur="validateEmail(this);"/>
+                </div>
+                <div>
+                    <label for="Password">Password:</label><br />
+                    <input id="Password" name="Password" type="password" required onBlur="validatePassword(this);" />
+                </div>
+                <div>
+                    <label for="ConfirmPassword">Confirm Password:</label><br />
+                    <input id="ConfirmPassword" name="ConfirmPassword" type="password" required  onBlur="validatePassword(this);" />
+                </div>
+                <div>
+                    <input type="submit" />
+                </div>
+            </div>
+        </form>
+    </BODY>
+</HTML>

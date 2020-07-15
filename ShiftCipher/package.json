@@ -1,0 +1,21 @@
+{
+  "name": "shiftcipher",
+  "version": "1.0.0",
+  "description": "api to encode and decode shift ciphers",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zwolfter/LightFeather.io.git"
+  },
+  "author": "Matthew Davidson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zwolfter/LightFeather.io/issues"
+  },
+  "homepage": "https://github.com/Zwolfter/LightFeather.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}

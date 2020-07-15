@@ -1,0 +1,11 @@
+{
+  "name": "registrationform",
+  "version": "1.0.0",
+  "description": "RegistrationForm for LightFeather Coding Challenge",
+  "main": "index.js",
+  "author": "Matthew Davidson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
