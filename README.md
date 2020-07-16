@@ -8,7 +8,9 @@ RegistrationForm
 
 - Simple Registration form and validation
 
-Both programs use node.js and were developed using node 12.0.0
+DEPENDENCIES:
+
+- Both programs use node.js and were developed using node 12.0.0
 
 To Execute ShiftCipher, start in the root folder then:
 
